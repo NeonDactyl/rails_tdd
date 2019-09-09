@@ -1,0 +1,19 @@
+<h1> <%= pluralize(@movies.length, "Movie") %></h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li><%= movie.name %>
+      <div class="">
+        <p>
+          Released on: <%= movie.released_on %>
+        </p>
+        <p>
+          description: <%= movie.description.truncate(10, separator: ' ') %>
+        </p>
+      <p>
+        Worldwide Gross: <%= movie.worldwide_gross %>
+      </p>
+      </div>
+    </li>
+  <% end %>
+</ul>
